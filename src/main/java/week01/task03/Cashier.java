@@ -1,11 +1,11 @@
-package Task01_3;
+package week01.task03;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class CashierImp implements Cashier, Runnable {
+public class Cashier implements  Runnable {
 
     private long id;
 

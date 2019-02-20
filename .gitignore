@@ -31,6 +31,3 @@ hs_err_pid*
 #Maven
 target/
 
-#Test
-test/
-logs/

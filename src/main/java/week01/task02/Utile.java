@@ -1,4 +1,4 @@
-package Task01_2;
+package week01.task02;
 
 
 import java.math.BigDecimal;
@@ -9,7 +9,7 @@ public class Utile {
 
     static List<Customer> createCustomers(List<Integer> bills) {
 
-        //create a Task01_3.Customer
+        //create a week01.task03.Customer
         Customer customer;
 
         //create List Customer

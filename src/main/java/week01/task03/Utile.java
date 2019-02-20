@@ -1,4 +1,4 @@
-package Task01_3;
+package week01.task03;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,12 +17,12 @@ public class Utile {
             goods = new ArrayList<Good>();
             customer = Customer.builder().build();
             customer.setId(i);
-            // create  Goods for the Task01_3.Customer
+            // create  Goods for the week01.task03.Customer
             for (int j = 1; j <= list.get(i); j++) {
                 goods.add(Good.builder().build());
             }
             customer.setGoods(goods);
-            //add the Task01_3.Customer in Queque
+            //add the week01.task03.Customer in Queque
             try {
                 Task01_3.customers.putLast(customer);
             } catch (InterruptedException e) {
@@ -31,13 +31,13 @@ public class Utile {
         }
     }
 
-    static Set<CashierImp> createCashier(int number) {
-        Set<CashierImp> cashierImps = new HashSet<CashierImp>();
+    static Set<Cashier> createCashier(int number) {
+        Set<Cashier> cashierImps = new HashSet<Cashier>();
 
-        CashierImp cashierImp;
+        Cashier cashierImp;
 
         for (int i = 0; i < number; i++) {
-            cashierImp = CashierImp.builder().build();
+            cashierImp = Cashier.builder().build();
             cashierImp.setId(i);
             cashierImps.add(cashierImp);
         }

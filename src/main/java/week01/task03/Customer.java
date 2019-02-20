@@ -1,4 +1,4 @@
-package Task01_3;
+package week01.task03;
 
 import lombok.Builder;
 import lombok.Data;

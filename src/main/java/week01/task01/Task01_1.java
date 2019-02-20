@@ -1,4 +1,4 @@
-package Task01_1;
+package week01.task01;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -12,7 +12,6 @@ public class Task01_1 {
 
         // check list size
         if (list.size() != 10) return null;
-
         StringBuilder result = new StringBuilder("(");
 
         int count = 0;
@@ -20,20 +19,13 @@ public class Task01_1 {
         Iterator<Integer> iterator = list.iterator();
 
         while (iterator.hasNext()) {
-
             if (count == 3) result.append(") ");
-
             if (count == 6) result.append("-");
-
             int next = iterator.next();
-
             // check  phone number
             if (next > 9 || next < 0) return null;
-
             result.append(next);
-
             if (count == 9) result.append(".");
-
             count++;
         }
         return new String(result);
@@ -47,13 +39,9 @@ public class Task01_1 {
         if (list.size() != 10) return null;
 
         String result = list.toString();
-
         Pattern pattern = Pattern.compile(reg);
-
         Matcher matcher = pattern.matcher(result);
-
         StringBuilder stringBuilder = new StringBuilder("(");
-
         String string = new String();
 
         while (matcher.find()) {

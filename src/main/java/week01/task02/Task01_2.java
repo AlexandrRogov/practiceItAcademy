@@ -1,4 +1,4 @@
-package Task01_2;
+package week01.task02;
 
 import java.math.BigDecimal;
 import java.util.Hashtable;

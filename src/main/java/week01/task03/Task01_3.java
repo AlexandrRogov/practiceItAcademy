@@ -1,4 +1,4 @@
-package Task01_3;
+package week01.task03;
 
 import lombok.Data;
 
@@ -18,10 +18,10 @@ public class Task01_3 {
     // bloke Deque
     static LinkedBlockingDeque<Customer> customers = new LinkedBlockingDeque<Customer>();
 
-    public long sumServiceTimeCustomer(LinkedBlockingDeque<Customer> customers, Set<CashierImp> cashiers) {
+    public long sumServiceTimeCustomer(LinkedBlockingDeque<Customer> customers, Set<Cashier> cashiers) {
 
         if (cashiers.size() != 0) {
-            for (CashierImp cashier : cashiers) {
+            for (Cashier cashier : cashiers) {
                 Thread thCasier = new Thread(cashier);
                 thCasier.start();
                 allThreads.add(thCasier);

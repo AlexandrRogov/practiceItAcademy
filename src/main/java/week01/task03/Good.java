@@ -1,16 +1,17 @@
-package Task01_2;
+package week01.task03;
 
 import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
-@Data
 @Builder
-public class Customer {
+@Data
+class Good {
 
     private long id;
 
-    private BigDecimal bill;
+    private String info;
 
+    private BigDecimal price;
 }
