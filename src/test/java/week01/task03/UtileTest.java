@@ -13,8 +13,8 @@ public class UtileTest {
 
         Set cashiers = Utile.createCashier(2);
 
-        assertEquals("don't work", cashiers.toString(), "[CashierImp(id=1, name=null, " +
-                "serviceTimeCustomers=0), CashierImp(id=0, name=null, serviceTimeCustomers=0)]");
+        assertEquals("don't work", cashiers.toString(), "[Cashier(id=1, name=null, " +
+                "serviceTimeCustomers=0), Cashier(id=0, name=null, serviceTimeCustomers=0)]");
 
 
     }
