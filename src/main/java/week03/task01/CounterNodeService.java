@@ -5,36 +5,33 @@ import week03.tree.Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
 public class CounterNodeService {
 
-    private int count;
 
-    public int countNodesRecursion(Tree tree) {
-        count = 0;
+    public <T extends Comparable> int countNodesRecursion(Tree<T> tree) {
         return countNodesRecursion(tree.getRoot());
     }
 
-    private int countNodesRecursion(Tree.Node node) {
-        if (node == null) {
-            return 0;
-        } else {
-            count++;
-            countNodesRecursion(node.getLeftChilde());
-            countNodesRecursion(node.getRigthChilde());
+    private <T> int countNodesRecursion(Tree.Node<T> node) {
+        int counter = 0;
+        if (node != null) {
+            counter = 1 + countNodesRecursion(node.getLeftChilde()) +
+                    countNodesRecursion(node.getRigthChilde());
         }
 
-        return count;
+        return counter;
     }
 
 
-    public int countNodesCycle(Tree tree) {
-        count = 0;
-        Tree.Node node = tree.getRoot();
-        Queue<Tree.Node> queue = new LinkedList<>();
+    public <T extends Comparable> int countNodesCycle(Tree<T> tree) {
+        int counter = 0;
+        Tree.Node<T> node = tree.getRoot();
+        Queue<Tree.Node<T>> queue = new LinkedList<>();
         queue.add(node);
 
         while (!queue.isEmpty()) {
-            count++;
+            counter++;
             node = queue.poll();
 
             if (node.getLeftChilde() != null) {
@@ -46,6 +43,6 @@ public class CounterNodeService {
             }
         }
 
-        return count;
+        return counter;
     }
 }

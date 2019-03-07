@@ -4,16 +4,17 @@ import week03.tree.Tree;
 
 public class TreeService {
 
-    public int depthTree(Tree tree) {
+    public <T extends Comparable> int depthTree(Tree<T> tree) {
         return depthTree(tree.getRoot());
     }
 
-    private int depthTree(Tree.Node node) {
-        if (node == null) {
-            return 0;
-        } else {
-            return 1 +
+    private <T> int depthTree(Tree.Node<T> node) {
+        int result = 0;
+        if (node != null) {
+            result = 1 +
                     Math.max(depthTree(node.getRigthChilde()), depthTree(node.getLeftChilde()));
         }
+
+        return result;
     }
 }

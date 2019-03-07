@@ -2,20 +2,17 @@ package week03.task01;
 
 import org.junit.Test;
 import week03.tree.Tree;
+import week03.util.TreeNodeClassUtil;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CounterNodeServiceTest {
 
-    private Tree<Integer> tree = new Tree<>();
     private CounterNodeService counterNodeService = new CounterNodeService();
 
     @Test
     public void countNodesRecursion() {
-        tree.add(1);
-        tree.add(3);
-        tree.add(4);
-        tree.add(6);
+        Tree<Integer> tree = TreeNodeClassUtil.buildIntegerTree();
 
         int actualForRecursion = counterNodeService.countNodesRecursion(tree);
 
@@ -25,12 +22,11 @@ public class CounterNodeServiceTest {
 
     @Test
     public void countNodesCycle() {
-        tree.add(1);
-        tree.add(3);
+        Tree<Integer> tree = TreeNodeClassUtil.buildIntegerTree();
 
         int actualForCycle = counterNodeService.countNodesCycle(tree);
 
-        int expected = 2;
+        int expected = 4;
         assertEquals(expected, actualForCycle);
     }
 }

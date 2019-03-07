@@ -4,47 +4,47 @@ import week03.tree.Tree;
 
 public class StringNodesService {
 
-    public String concatenateNodeToStringCLR(Tree tree) {
+    public String concatenateNodeToStringPreOrder(Tree<Character> tree) {
         StringBuilder string = new StringBuilder();
-        return concatenateNodeToStringCLR(tree.getRoot(), string).toString();
+        return concatenateNodeToStringPreOrder(tree.getRoot(), string).toString();
     }
 
-    private StringBuilder concatenateNodeToStringCLR(Tree.Node node, StringBuilder string) {
-        if (node == null) {
-            return string;
+    private StringBuilder concatenateNodeToStringPreOrder(Tree.Node<Character> node, StringBuilder string) {
+        if (node != null) {
+            string.append(node.getData());
+            concatenateNodeToStringPreOrder(node.getLeftChilde(), string);
+            concatenateNodeToStringPreOrder(node.getRigthChilde(), string);
         }
-        string.append(node.getData());
-        concatenateNodeToStringCLR(node.getLeftChilde(), string);
-        concatenateNodeToStringCLR(node.getRigthChilde(), string);
+
         return string;
     }
 
-    public String concatenateNodeToStringLCR(Tree tree) {
+    public String concatenateNodeToStringInOrder(Tree<Character> tree) {
         StringBuilder string = new StringBuilder();
-        return concatenateNodeToStringLCR(tree.getRoot(), string).toString();
+        return concatenateNodeToStringInOrder(tree.getRoot(), string).toString();
     }
 
-    private StringBuilder concatenateNodeToStringLCR(Tree.Node node, StringBuilder string) {
+    private StringBuilder concatenateNodeToStringInOrder(Tree.Node<Character> node, StringBuilder string) {
         if (node == null) {
             return string;
         }
-        concatenateNodeToStringLCR(node.getLeftChilde(), string);
+        concatenateNodeToStringInOrder(node.getLeftChilde(), string);
         string.append(node.getData());
-        concatenateNodeToStringLCR(node.getRigthChilde(), string);
+        concatenateNodeToStringInOrder(node.getRigthChilde(), string);
         return string;
     }
 
-    public String concatenateNodeToStringLRC(Tree tree) {
+    public String concatenateNodeToStringPostOrder(Tree<Character> tree) {
         StringBuilder string = new StringBuilder();
-        return concatenateNodeToStringLRC(tree.getRoot(), string).toString();
+        return concatenateNodeToStringPostOrder(tree.getRoot(), string).toString();
     }
 
-    private StringBuilder concatenateNodeToStringLRC(Tree.Node node, StringBuilder string) {
+    private StringBuilder concatenateNodeToStringPostOrder(Tree.Node<Character> node, StringBuilder string) {
         if (node == null) {
             return string;
         }
-        concatenateNodeToStringLRC(node.getLeftChilde(), string);
-        concatenateNodeToStringLRC(node.getRigthChilde(), string);
+        concatenateNodeToStringPostOrder(node.getLeftChilde(), string);
+        concatenateNodeToStringPostOrder(node.getRigthChilde(), string);
         string.append(node.getData());
         return string;
     }
