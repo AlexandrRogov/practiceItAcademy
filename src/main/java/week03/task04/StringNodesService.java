@@ -7,10 +7,10 @@ import java.util.Queue;
 
 public class StringNodesService {
 
-    public String concatenateNodeToString(Tree tree) {
+    public <T extends Comparable> String concatenateNodeToString(Tree<T> tree) {
         StringBuilder string = new StringBuilder();
-        Tree.Node node = tree.getRoot();
-        Queue<Tree.Node> queue = new LinkedList<>();
+        Tree.Node<T> node = tree.getRoot();
+        Queue<Tree.Node<T>> queue = new LinkedList<>();
         queue.add(node);
 
         while (!queue.isEmpty()) {

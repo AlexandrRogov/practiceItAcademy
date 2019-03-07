@@ -2,24 +2,21 @@ package week03.task02;
 
 import org.junit.Test;
 import week03.tree.Tree;
+import week03.util.TreeNodeClassUtil;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class TreeServiceTest {
 
-    private Tree<Integer> tree = new Tree<>();
     private TreeService treeService = new TreeService();
 
     @Test
     public void depthTree() {
-        tree.add(5);
-        tree.add(4);
-        tree.add(6);
-        tree.add(7);
+        Tree<Integer> tree = TreeNodeClassUtil.buildIntegerTree();
 
         int actual = treeService.depthTree(tree);
 
-        int expected = 3;
+        int expected = 4;
         assertEquals(expected, actual);
     }
 }

@@ -2,23 +2,19 @@ package week03.task03;
 
 import org.junit.Test;
 import week03.tree.Tree;
+import week03.util.TreeNodeClassUtil;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringNodesServiceTest {
 
-    private Tree<String> tree = new Tree<>();
     private StringNodesService nodesService = new StringNodesService();
 
     @Test
     public void concatenateNodeToStringCLR() {
-        tree.add("m");
-        tree.add("n");
-        tree.add("e");
-        tree.add("h");
-        tree.add("a");
+        Tree<Character> tree = TreeNodeClassUtil.buildCharacterTree();
 
-        String actual = nodesService.concatenateNodeToStringCLR(tree);
+        String actual = nodesService.concatenateNodeToStringPreOrder(tree);
 
         String expected = "meahn";
         assertEquals(expected, actual);
@@ -26,13 +22,9 @@ public class StringNodesServiceTest {
 
     @Test
     public void concatenateNodeToStringLCR() {
-        tree.add("m");
-        tree.add("n");
-        tree.add("e");
-        tree.add("h");
-        tree.add("a");
+        Tree<Character> tree = TreeNodeClassUtil.buildCharacterTree();
 
-        String actual = nodesService.concatenateNodeToStringLCR(tree);
+        String actual = nodesService.concatenateNodeToStringInOrder(tree);
 
         String expected = "aehmn";
         assertEquals(expected, actual);
@@ -40,13 +32,9 @@ public class StringNodesServiceTest {
 
     @Test
     public void concatenateNodeToStringLRC() {
-        tree.add("m");
-        tree.add("n");
-        tree.add("e");
-        tree.add("h");
-        tree.add("a");
+        Tree<Character> tree = TreeNodeClassUtil.buildCharacterTree();
 
-        String actual = nodesService.concatenateNodeToStringLRC(tree);
+        String actual = nodesService.concatenateNodeToStringPostOrder(tree);
 
         String expected = "ahenm";
         assertEquals(expected, actual);

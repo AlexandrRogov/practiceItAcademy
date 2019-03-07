@@ -2,20 +2,17 @@ package week03.task04;
 
 import org.junit.Test;
 import week03.tree.Tree;
+import week03.util.TreeNodeClassUtil;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringNodesServiceTest {
-    private Tree<String> tree = new Tree<>();
+
     private StringNodesService nodesService = new StringNodesService();
 
     @Test
     public void concatenateNodeToString() {
-        tree.add("m");
-        tree.add("n");
-        tree.add("e");
-        tree.add("h");
-        tree.add("a");
+        Tree<Character> tree = TreeNodeClassUtil.buildCharacterTree();
 
         String actual = nodesService.concatenateNodeToString(tree);
 
