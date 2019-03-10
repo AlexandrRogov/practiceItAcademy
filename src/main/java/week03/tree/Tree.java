@@ -17,6 +17,10 @@ public class Tree<T extends Comparable> {
         private T data;
         private Node<T> leftChilde;
         private Node<T> rigthChilde;
+
+        private Node(T data) {
+            this.data = data;
+        }
     }
 
     public void add(T data) {
@@ -25,7 +29,7 @@ public class Tree<T extends Comparable> {
 
     private Node<T> add(Node<T> node, T data) {
         if (isEmpty(node)) {
-            return new Tree.Node<>(data, null, null);
+            return new Tree.Node<>(data);
         }
 
         if (data.compareTo(node.data) >= 0) {
