@@ -6,6 +6,7 @@ public class StringNodesService {
 
     public String concatenateNodeToStringPreOrder(Tree<Character> tree) {
         StringBuilder string = new StringBuilder();
+
         return concatenateNodeToStringPreOrder(tree.getRoot(), string).toString();
     }
 
@@ -21,6 +22,7 @@ public class StringNodesService {
 
     public String concatenateNodeToStringInOrder(Tree<Character> tree) {
         StringBuilder string = new StringBuilder();
+
         return concatenateNodeToStringInOrder(tree.getRoot(), string).toString();
     }
 
@@ -31,11 +33,13 @@ public class StringNodesService {
         concatenateNodeToStringInOrder(node.getLeftChilde(), string);
         string.append(node.getData());
         concatenateNodeToStringInOrder(node.getRigthChilde(), string);
+
         return string;
     }
 
     public String concatenateNodeToStringPostOrder(Tree<Character> tree) {
         StringBuilder string = new StringBuilder();
+
         return concatenateNodeToStringPostOrder(tree.getRoot(), string).toString();
     }
 
@@ -46,6 +50,7 @@ public class StringNodesService {
         concatenateNodeToStringPostOrder(node.getLeftChilde(), string);
         concatenateNodeToStringPostOrder(node.getRigthChilde(), string);
         string.append(node.getData());
+
         return string;
     }
 }
